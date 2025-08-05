@@ -1,10 +1,3 @@
-<!--
- * @Author: Lee
- * @Date: 2023-01-11 16:16:41
- * @LastEditors: Lee
- * @LastEditTime: 2023-01-11 16:19:59
- * @Description: 
--->
 <template>
   <div class="page-back" @click="$router.back()">&lt; RETURN TO HOME PAGE</div>
 </template>

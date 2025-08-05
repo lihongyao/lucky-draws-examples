@@ -1,19 +1,11 @@
-<!--
- * @Author: Lee
- * @Date: 2023-01-11 11:40:57
- * @LastEditors: Lee
- * @LastEditTime: 2023-01-13 11:43:20
- * @Description: 
--->
-
 <script setup lang="ts">
 // -- imports
-import { reactive, onMounted, ref } from 'vue';
-import json from './data.json';
-import LuckyDraw from '@/utils/LuckyDraw';
-import PageBack from '@/components/PageBack/index.vue';
-import Big from 'lg-big';
-import { ElMessage } from 'element-plus';
+import { reactive, onMounted, ref } from "vue";
+import json from "./data.json";
+import LuckyDraw from "@/utils/LuckyDraw";
+import PageBack from "@/components/PageBack/index.vue";
+import Big from "@likg/big";
+import { ElMessage } from "element-plus";
 
 // -- interfaces
 interface BoxProps {
@@ -84,7 +76,7 @@ const getStyle = (el: any, attr: string) => {
   }
 };
 const getBoundings = () => {
-  const w = parseInt(getStyle(luckyDrawRef.value, 'width'));
+  const w = parseInt(getStyle(luckyDrawRef.value, "width"));
   state.itemWidth = w / 7;
 };
 const getBgColor = (colorStop: string) => {
@@ -104,7 +96,7 @@ const getData = () => {
 const onOpenBox = () => {
   if (!state.data || !state.luckyDrawData || state.isAnimating) return;
   if (state.balance < state.data.price) {
-    ElMessage.info('余额不足');
+    ElMessage.info("余额不足");
     return;
   }
   state.luckyDrawResultsVisible = false;
@@ -124,8 +116,8 @@ const onOpenBox = () => {
     visibleItemCount: 7,
     openAnimation: state.openAnimation,
     openSound: state.openSound,
-    audioUriForStart: '/mp3s/case-one.mp3',
-    audioUriForEnd: '/mp3s/case-coin.mp3',
+    audioUriForStart: "/mp3s/case-one.mp3",
+    audioUriForEnd: "/mp3s/case-coin.mp3",
     completed: () => {
       state.isAnimating = false;
       state.luckyDrawResultsVisible = true;
@@ -135,9 +127,7 @@ const onOpenBox = () => {
 
 const onSell = () => {
   state.luckyDrawResultsVisible = false;
-  state.balance = new Big(state.balance)
-    .plus(state.luckyDrawResults?.price || 0)
-    .parse();
+  state.balance = new Big(state.balance).plus(state.luckyDrawResults?.price || 0).parse();
 };
 </script>
 
@@ -152,17 +142,11 @@ const onSell = () => {
         <div class="controls flex-h-center">
           <div class="item flex-h-center">
             <span class="label">SOUND:</span>
-            <el-switch
-              v-model="state.openSound"
-              style="--el-switch-on-color: #5fb878"
-            />
+            <el-switch v-model="state.openSound" style="--el-switch-on-color: #5fb878" />
           </div>
           <div class="item flex-h-center">
             <span class="label">ANIMATION:</span>
-            <el-switch
-              v-model="state.openAnimation"
-              style="--el-switch-on-color: #5fb878"
-            />
+            <el-switch v-model="state.openAnimation" style="--el-switch-on-color: #5fb878" />
           </div>
         </div>
       </div>
@@ -195,10 +179,7 @@ const onSell = () => {
           </template>
         </div>
         <!-- 抽奖结果 -->
-        <div
-          class="lucky-draw-results flex-h-center"
-          :class="{ visible: state.luckyDrawResultsVisible }"
-        >
+        <div class="lucky-draw-results flex-h-center" :class="{ visible: state.luckyDrawResultsVisible }">
           <div class="infos flex-h-center">
             <div class="a-item">
               <div>{{ state.luckyDrawResults?.wearDegree }}</div>
@@ -225,21 +206,12 @@ const onSell = () => {
       <!-- Balance End -->
       <!-- Actions Start -->
       <div v-if="state.luckyDrawResultsVisible" class="flex-h-center">
-        <div
-          class="action-button"
-          @click="state.luckyDrawResultsVisible = false"
-        >
-          &lt;
-        </div>
-        <div class="action-button" @click="onSell">
-          Sell ${{ state.luckyDrawResults?.price }}
-        </div>
+        <div class="action-button" @click="state.luckyDrawResultsVisible = false">&lt;</div>
+        <div class="action-button" @click="onSell">Sell ${{ state.luckyDrawResults?.price }}</div>
         <div class="action-button" @click="onOpenBox">Open again</div>
       </div>
       <div v-else class="start-button" @click="onOpenBox">
-        {{
-          state.isAnimating ? 'OPENING...' : `OPEN FOR $${state.data?.price} `
-        }}
+        {{ state.isAnimating ? "OPENING..." : `OPEN FOR $${state.data?.price} ` }}
       </div>
       <!-- Actions End -->
     </div>
@@ -313,7 +285,7 @@ const onSell = () => {
     transform: translateX(-50%);
     &::before,
     &::after {
-      content: '';
+      content: "";
       display: block;
       position: absolute;
       left: 50%;

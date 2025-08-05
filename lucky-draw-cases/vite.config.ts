@@ -1,10 +1,4 @@
-/*
- * @Author: Lee
- * @Date: 2023-01-11 11:35:52
- * @LastEditors: Lee
- * @LastEditTime: 2023-01-11 11:36:57
- * @Description:
- */
+
 import { fileURLToPath, URL } from 'node:url';
 
 import { defineConfig } from 'vite';

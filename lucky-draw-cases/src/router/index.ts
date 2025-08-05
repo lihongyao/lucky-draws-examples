@@ -1,10 +1,4 @@
-/*
- * @Author: Lee
- * @Date: 2023-01-11 11:35:52
- * @LastEditors: Lee
- * @LastEditTime: 2023-01-12 13:38:43
- * @Description:
- */
+
 import { createRouter, createWebHistory } from 'vue-router';
 
 const router = createRouter({

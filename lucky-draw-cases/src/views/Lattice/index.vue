@@ -1,17 +1,9 @@
-<!--
- * @Author: Lee
- * @Date: 2023-01-12 13:38:18
- * @LastEditors: Lee
- * @LastEditTime: 2023-01-12 18:04:08
- * @Description: 
--->
-
 <script setup lang="ts">
 // -- imports
-import { ref } from 'vue';
-import PageBack from '@/components/PageBack/index.vue';
-import { ElMessage } from 'element-plus';
-import LuckyDraw from '@/utils/LuckyDraw';
+import { ref } from "vue";
+import PageBack from "@/components/PageBack/index.vue";
+import { ElMessage } from "element-plus";
+import LuckyDraw from "@/utils/LuckyDraw";
 
 // -- refs
 const isAnimating = ref(false);
@@ -21,11 +13,11 @@ const onLattice = () => {
   if (isAnimating.value) return;
   isAnimating.value = true;
   LuckyDraw.lattice({
-    elClass: 'lattice-item',
+    elClass: "lattice-item",
     winningIndex: 5,
     completed: () => {
       isAnimating.value = false;
-      ElMessage.success('Congratulations on winning the lottery!');
+      ElMessage.success("Congratulations on winning the lottery!");
     },
   });
 };
@@ -49,11 +41,7 @@ const onLattice = () => {
         <div class="lattice-item"><img src="./images/goods_8.png" /></div>
       </div>
       <!-- 抽奖按钮 -->
-      <img
-        class="start-button"
-        src="./images/lattice_btn.png"
-        @click="onLattice"
-      />
+      <img class="start-button" src="./images/lattice_btn.png" @click="onLattice" />
     </div>
   </div>
 </template>
@@ -130,7 +118,7 @@ const onLattice = () => {
         transform: translateY(-50%);
       }
       &.active::before {
-        content: '';
+        content: "";
         display: block;
         width: 100%;
         height: 100%;
@@ -139,11 +127,7 @@ const onLattice = () => {
         left: 50%;
         transform: translate(-50%, -50%);
 
-        background: linear-gradient(
-          180deg,
-          rgba(255, 231, 56, 0.5) 0%,
-          rgba(255, 238, 0, 0.65) 100%
-        );
+        background: linear-gradient(180deg, rgba(255, 231, 56, 0.5) 0%, rgba(255, 238, 0, 0.65) 100%);
         box-shadow: 0px 0px 8px 4px rgba(255, 255, 255, 0.5);
         border-radius: 10px;
         border: 2px solid #ffffff;

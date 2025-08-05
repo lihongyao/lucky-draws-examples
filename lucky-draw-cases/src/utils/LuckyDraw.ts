@@ -1,10 +1,3 @@
-/*
- * @Author: Lee
- * @Date: 2023-01-11 15:17:20
- * @LastEditors: Lee
- * @LastEditTime: 2023-01-13 11:30:45
- * @Description: 抽奖工具
- */
 
 /**********************
  ** 【滚动抽奖】参数类型
@@ -256,7 +249,7 @@ class LuckyDraw {
     let startEndTimes = 10; /** 开始和结束时的缓冲次数 */
     let startTimes = times - startEndTimes; /** 开始循环缓冲次数 */
     let endTimes = startEndTimes; /** 结束循环缓冲次数 */
-    let timer = 0; /** 定时器 */
+    let timer: any = 0; /** 定时器 */
 
     // -- 动画函数
     const running = () => {

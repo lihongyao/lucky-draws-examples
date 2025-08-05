@@ -1,13 +1,5 @@
-<!--
- * @Author: Lee
- * @Date: 2023-01-11 11:40:43
- * @LastEditors: Lee
- * @LastEditTime: 2023-01-13 11:40:53
- * @Description: 
--->
-
 <script setup lang="ts">
-import { RouterLink } from 'vue-router';
+import { RouterLink } from "vue-router";
 </script>
 <template>
   <div class="page">
@@ -17,21 +9,11 @@ import { RouterLink } from 'vue-router';
         <div class="title">抽奖代码示例</div>
         <p>
           点击下方链接可查看示例，如果您觉得不错，欢迎在
-          <a
-            target="_blank"
-            href="https://gitee.com/lihongyao/lucky-draws-examples"
-            >Gitee</a
-          >
+          <a target="_blank" href="https://gitee.com/lihongyao/lucky-draws-examples">Gitee</a>
           /
-          <a
-            target="_blank"
-            href="https://github.com/lihongyao/lucky-draws-examples"
-            >Github</a
-          >
+          <a target="_blank" href="https://github.com/lihongyao/lucky-draws-examples">Github</a>
           /
-          <a target="_blank" href="https://juejin.cn/post/7187976478468866104"
-            >Github</a
-          >
+          <a target="_blank" href="https://juejin.cn/post/7187976478468866104">Github</a>
 
           点赞关注一波~
         </p>
@@ -92,7 +74,7 @@ a,
 }
 nav a:not(:last-child) {
   &::after {
-    content: '|';
+    content: "|";
     margin: 0 20px;
   }
 }

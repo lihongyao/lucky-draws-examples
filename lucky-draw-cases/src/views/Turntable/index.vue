@@ -1,17 +1,9 @@
-<!--
- * @Author: Lee
- * @Date: 2023-01-11 11:43:18
- * @LastEditors: Lee
- * @LastEditTime: 2023-01-12 11:40:23
- * @Description: 
--->
-
 <script setup lang="ts">
 // -- imports
-import { ref } from 'vue';
-import LuckyDraw from '@/utils/LuckyDraw';
-import PageBack from '@/components/PageBack/index.vue';
-import { ElMessage } from 'element-plus';
+import { ref } from "vue";
+import LuckyDraw from "@/utils/LuckyDraw";
+import PageBack from "@/components/PageBack/index.vue";
+import { ElMessage } from "element-plus";
 
 // -- refs
 const turntableRef = ref();
@@ -34,13 +26,13 @@ const onTurntable = () => {
     wrap: turntableRef.value,
     count: 8,
     index: 3,
-    audioUriForStart: '/mp3s/case-one.mp3',
-    audioUriForEnd: '/mp3s/case-coin.mp3',
+    audioUriForStart: "/mp3s/case-one.mp3",
+    audioUriForEnd: "/mp3s/case-coin.mp3",
     duration: 10,
     loop: 8,
     completed: () => {
       isAnimating.value = false;
-      ElMessage.success('Congratulations on winning the lottery!');
+      ElMessage.success("Congratulations on winning the lottery!");
     },
   });
 };
@@ -83,7 +75,7 @@ const onTurntable = () => {
 .turntable-wrap {
   width: 300px;
   height: 300px;
-  background: url('./images/dis.png') no-repeat center center;
+  background: url("./images/dis.png") no-repeat center center;
   background-size: cover;
   position: relative;
   z-index: 1;
